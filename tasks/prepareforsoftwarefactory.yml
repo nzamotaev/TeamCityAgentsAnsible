@@ -3,3 +3,13 @@
     with_items:
     - cmake
     - make
+    - texlive-latex-base
+    - texlive-latex-extra
+    - texlive-latex-recommended
+    - aspell
+    - aspell-en
+    - python-sphinx
+    - python-sphinx-rtd-theme
+    - python-sphinxcontrib.seqdiag
+    - python-sphinxcontrib.blockdiag
+    - python-sphinxcontrib.actdiag
