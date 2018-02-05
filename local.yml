@@ -12,4 +12,4 @@
       apt: pkg=openjdk-8-jre-headless state=installed install_recommends=no
     - name: Install unzip (TeamCity agent requirements)
       apt: pkg=unzip state=installed install_recommends=no
-
+    - include: tasks/prepareforsoftwarefactory.yml
