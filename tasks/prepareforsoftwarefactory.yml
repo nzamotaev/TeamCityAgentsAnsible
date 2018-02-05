@@ -2,3 +2,4 @@
     apt: name={{item}} state=installed install_recommends=no
     with_items:
     - cmake
+    - make
