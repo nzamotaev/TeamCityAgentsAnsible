@@ -2,3 +2,6 @@
     apt: name={{item}} state=installed install_recommends=no
     with_items:
     - build-essential
+    - cmake
+    - zlib1g-dev
+    - libdbus-glib-1-dev
