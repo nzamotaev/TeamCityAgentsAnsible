@@ -1,0 +1,4 @@
+  - name: Install dlt-daemon build dependencies
+    apt: name={{item}} state=installed install_recommends=no
+    with_items:
+    - build-essential

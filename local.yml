@@ -24,3 +24,5 @@
       apt: pkg=unzip state=installed install_recommends=no
     - include: tasks/preparevirtualenv.yml
     - include: tasks/prepareforsoftwarefactory.yml
+    - include: tasks/preparefordlt-daemon.yml
+
