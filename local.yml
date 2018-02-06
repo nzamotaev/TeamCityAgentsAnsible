@@ -15,6 +15,7 @@
       with_items:
         - python-virtualenv
         - python3-virtualenv
+        - virtualenv
     - name: Install openvpn
       apt: pkg=openvpn state=installed install_recommends=no
     - name: Install java (TeamCity agent requirement)
