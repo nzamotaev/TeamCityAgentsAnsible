@@ -1,2 +1,3 @@
-  - name: Install software factory dependecies
-    apt: name={{item}} state=installed install_recommends=no
+  - name: Create python virtualenv for teamcity
+    become_user: allview
+    pip: virtualenv=/home/allview/virtualenv virtualevn_site_packages=yes
