@@ -1,3 +1,4 @@
   - name: Create python virtualenv for teamcity
     become_user: allview
+    become: yes
     pip: virtualenv=/home/allview/virtualenv virtualenv_site_packages=yes name=pip

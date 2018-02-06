@@ -19,6 +19,7 @@
       virtualenv_site_packages: yes
       name: {{item}}
     become_user: allview
+    become: yes
     with_items:
     - sphinxcontrib-seqdiag
     - sphinxcontrib-blockdiag
