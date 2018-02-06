@@ -6,10 +6,20 @@
       apt: pkg={{item}} state=installed install_recommends=no update_cache=yes
       with_items:
         - docker.io
+    - name: Install useful utilities
+      apt: pkg={{item}} state=installed
+      with_items:
+        - mc
+    - name: Install python-virtualenv
+      apt: pkg={{item}} state=installed install_recommends=no
+      with_items:
+        - python-virtualenv
+        - python3-virtualenv
     - name: Install openvpn
       apt: pkg=openvpn state=installed install_recommends=no
     - name: Install java (TeamCity agent requirement)
       apt: pkg=openjdk-8-jre-headless state=installed install_recommends=no
     - name: Install unzip (TeamCity agent requirements)
       apt: pkg=unzip state=installed install_recommends=no
+    - include: tasks/preparevirtualenv.yml
     - include: tasks/prepareforsoftwarefactory.yml
