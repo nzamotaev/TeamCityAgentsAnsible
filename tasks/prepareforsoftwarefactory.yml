@@ -13,3 +13,16 @@
     - python-sphinxcontrib.seqdiag
     - python-sphinxcontrib.blockdiag
     - python-sphinxcontrib.actdiag
+  - name: Pip install sphinx
+    pip:
+      virtualenv: /home/allview/virtualenv
+      virtualenv_site_packages: yes
+      name: {{item}}
+    become_user: allview
+    with_items:
+    - sphinxcontrib-seqdiag
+    - sphinxcontrib-blockdiag
+    - sphinxcontrib-actdiag
+    - sphinxcontrib-manpage
+    - sphinx_rtd_theme
+
