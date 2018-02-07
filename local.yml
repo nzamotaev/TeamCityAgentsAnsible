@@ -30,4 +30,5 @@
     - include: tasks/preparevirtualenv.yml
     - include: tasks/prepareforsoftwarefactory.yml
     - include: tasks/preparefordlt-daemon.yml
+    - include: tasks/prepareforbitbake.yml
 
