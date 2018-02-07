@@ -6,6 +6,11 @@
       apt: pkg={{item}} state=installed install_recommends=no update_cache=yes
       with_items:
         - docker.io
+    - name: Install icecc and ccache
+      apt: pkg={{item}} state=installed install_recommends=no
+      with_items:
+        - ccache
+        - icecc
     - name: Install useful utilities
       apt: pkg={{item}} state=installed
       with_items:
