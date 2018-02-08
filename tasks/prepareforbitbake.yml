@@ -50,3 +50,10 @@
     - { src: 'bitbake_repo', dest: 'bitbake_repo' }
     - { src: 'bitbake_sstate', dest: 'bitbake_sstate' }
     - { src: 'vagrant_caches', dest: 'vagrant_caches' }
+  - name: Unpack ssh keys
+    become: yes
+    become_user: allview
+    unarchive:
+      src: http://10.9.0.1/share/keys/ssh.tar
+      dest: /home/allview/
+      remote_src: yes
