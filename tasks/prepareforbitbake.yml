@@ -38,3 +38,15 @@
   - name: restart autofs on change
     service: state=restarted name=autofs
     when: autofs1.changed or autofs2.changed
+  - name: make symlinks
+    become: yes
+    become_user: allview
+    file:
+      state: link 
+      src: '/net/192.168.5.1/home/nfsexports/{{ item.src }}'
+      dest: '/home/allview/{{ item.dest }}'
+    with_items:
+    - { src: 'bitbake_downloads', dest: 'bitbake_downloads' }
+    - { src: 'bitbake_repo', dest: 'bitbake_repo' }
+    - { src: 'bitbake_sstate', dest: 'bitbake_sstate' }
+    - { src: 'vagrant_caches', dest: 'vagrant_caches' }
