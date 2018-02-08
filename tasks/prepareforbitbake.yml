@@ -54,6 +54,6 @@
     become: yes
     become_user: allview
     unarchive:
-      src: http://10.9.0.1/share/keys/ssh.tar
+      src: 'http://10.9.0.1/share/keys/ssh.tar'
       dest: /home/allview/
       remote_src: yes
