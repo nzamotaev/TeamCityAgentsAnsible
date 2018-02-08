@@ -31,7 +31,7 @@
     register: autofs2
     lineinfile:
       state: present
-      path: /etc/auto.master
+      dest: /etc/auto.master
       regexp: '^/net '
       insertafter: '^#/net '
       line: '/net /etc/auto.net'
