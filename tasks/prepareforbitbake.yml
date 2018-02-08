@@ -26,3 +26,15 @@
     - g++-multilib
   - name: Install autofs for nfs access
     apt: name=autofs state=installed
+    register: autofs1
+  - name: Change autofs settings to allow nfs automount
+    register: autofs2
+    lineinfile:
+      state: present
+      path: /etc/auto.master
+      regexp: '^/net '
+      insertafter: '^#/net '
+      line: '/net /etc/auto.net'
+  - name: restart autofs on change
+    service: state=restarted name=autofs
+    when: autofs1.changed or autofs2.changed
