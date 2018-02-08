@@ -50,10 +50,15 @@
     - { src: 'bitbake_repo', dest: 'bitbake_repo' }
     - { src: 'bitbake_sstate', dest: 'bitbake_sstate' }
     - { src: 'vagrant_caches', dest: 'vagrant_caches' }
+  - name: Fetch keys
+    get_url:
+      url: 'http://10.9.0.1/share/keys/ssh.tar'
+      dest: /var/lib/ansible/ssh.tar
+      mode: 0444
   - name: Unpack ssh keys
     become: yes
     become_user: allview
     unarchive:
-      src: 'http://10.9.0.1/share/keys/ssh.tar'
+      src: /var/lib/ansible/ssh.tar
       dest: /home/allview/
       remote_src: yes
