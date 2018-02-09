@@ -29,7 +29,7 @@
       repo: 'ppa:git-core/ppa'
       state: present
   - name: Install git-lfs
-    apt: name=git-lfs status=present install_recommends=no
+    apt: name=git-lfs state=present install_recommends=no
   - name: Install autofs for nfs access
     apt: name=autofs state=installed
     register: autofs1
