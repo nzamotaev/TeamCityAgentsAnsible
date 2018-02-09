@@ -27,6 +27,14 @@
   - name: Install ppa for git-lfs
     apt_repository:
       repo: 'ppa:git-core/ppa'
+      state: absent
+  - name: Install packagecloud repo
+    apt_repository:
+      repo: deb https://packagecloud.io/github/git-lfs/ubuntu/ xenial main
+      state: present
+  - name: Install packagecloud repo key
+    apt_key:
+      url: 'https://packagecloud.io/github/git-lfs/gpgkey'
       state: present
   - name: Install git-lfs
     apt: name=git-lfs state=present install_recommends=no
