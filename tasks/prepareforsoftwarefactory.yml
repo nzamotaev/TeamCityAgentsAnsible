@@ -9,6 +9,8 @@
     - aspell
     - aspell-en
     - python-sphinx
+    - python-sphinxcontrib.spelling
+    - python3-enchant
   - name: Pip install sphinx
     pip: virtualenv=/home/allview/virtualenv virtualenv_site_packages=yes name={{item}}
     become_user: allview
